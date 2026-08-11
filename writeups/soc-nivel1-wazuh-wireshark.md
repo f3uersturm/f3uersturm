@@ -26,6 +26,10 @@ Ambiente de laboratorio con VirtualBox, pensado como espacio controlado y aislad
 - Verificación de conexión: el agente aparece como `active` en el panel, con su IP y sistema operativo correctamente identificados.
 - Exploración de **Threat Intelligence → Threat Hunting**: dashboard con evolución de alertas por nivel, técnicas MITRE ATT&CK más frecuentes, y eventos por agente — incluida la regla `504` (desconexión de agente), inspeccionada en detalle junto con su mapeo a compliance (GDPR, HIPAA, PCI-DSS, TSC).
 
+![Dashboard de Threat Hunting en Wazuh](./img/wazuh-dashboard.png)
+
+![Tabla de eventos con el agente WinDev2407Eval conectado](./img/wazuh-agent-events.png)
+
 ## 3. Análisis de tráfico con Wireshark
 
 Ejercicio de análisis forense sobre capturas `.pcap` provistas por la cátedra, siguiendo una metodología deliberada (no aplicar filtros a ciegas sin antes entender qué se está buscando):
@@ -35,8 +39,16 @@ Ejercicio de análisis forense sobre capturas `.pcap` provistas por la cátedra,
 3. **Resolved Addresses**: identificación de fabricantes/dominios asociados a las MACs e IPs presentes.
 4. **Conversations**: ordenado por tamaño de paquete para localizar transferencias de archivo grandes — señal típica de posible malware.
 5. **Extracción de objetos HTTP** (*File → Export Objects → HTTP*): entre los objetos transferidos aparece un archivo llamado `neuro.msi`.
+
+![Lista de objetos HTTP exportados, con neuro.msi en primera fila](./img/neuro-msi-export.png)
+
 6. **Verificación de firma de archivo:** en vez de confiar en la extensión `.msi`, se extrajo el encabezado hexadecimal real (`xxd neuro.msi | more`) y se comparó contra la firma oficial de un instalador de Microsoft (`D0 CF 11 E0 A1 B1 1A E1`, referencia: [gary Kessler's file signature table](https://www.garykessler.net/library/file_sigs.html)) — coincidencia exacta, confirmando que el archivo era efectivamente un instalador y no un ejecutable disfrazado con otra extensión.
+
+![Comparación del header hexadecimal contra la firma oficial de un MSI](./img/xxd-signature-check.png)
+
 7. **Confirmación en VirusTotal:** el hash del archivo fue marcado como malicioso por 40 de 66 motores antivirus, con etiquetas consistentes entre proveedores (`Trojan.Win32.Sheller`, `Trojan.Win64.Brutel`, `Trojan.Agent.Latrodectus`) — indicando una familia de troyano dropper conocida.
+
+![Resultado de VirusTotal: múltiples motores marcando el archivo como troyano](./img/virustotal-result.png)
 
 ## Conclusión
 
