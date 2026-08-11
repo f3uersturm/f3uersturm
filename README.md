@@ -16,6 +16,10 @@ Técnico informático y de redes desde 2011; en 2015 di mis primeros pasos en ci
 Metodología por máquina: reconocimiento, enumeración, explotación, escalada de privilegios, remediación.
 *(en construcción)*
 
+### Lab SOC: SIEM con Wazuh + análisis de tráfico con Wireshark
+Home lab del BootCamp Analista SOC Nivel 1 (DOJO, 2024): despliegue de Wazuh con agente en un endpoint Windows, y análisis forense de una captura de tráfico que termina en la identificación positiva de un troyano (`neuro.msi`), verificado por firma de archivo y confirmado en VirusTotal (40/66 motores).
+- [Write-up completo](./writeups/soc-nivel1-wazuh-wireshark.md)
+
 ### Lab de detección: Wazuh + Windows + Kali
 Ataques simulados desde Kali contra un host Windows con agente Wazuh, documentando qué se detecta y qué no.
 *(en construcción)*
@@ -49,6 +53,7 @@ Sistema multi-tenant (Spring Boot + Angular + PostgreSQL). Definí los requisito
 
 ## Formación
 
+- BootCamp Analista SOC Nivel 1 (DOJO) — completado, 2024
 - HTB Academy — curso Ethical Hacker, en curso (certificado a confirmar)
 - Licenciatura en Ciberdefensa — inscripción en curso
 - Postulando a la beca de certificación de bug bounty de Hackademy (Ekoparty)
