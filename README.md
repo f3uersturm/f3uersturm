@@ -20,6 +20,11 @@ Metodología por máquina: reconocimiento, enumeración, explotación, escalada 
 Home lab del BootCamp Analista SOC Nivel 1 (DOJO, 2024): despliegue de Wazuh con agente en un endpoint Windows, y análisis forense de una captura de tráfico que termina en la identificación positiva de un troyano (`neuro.msi`), verificado por firma de archivo y confirmado en VirusTotal (40/66 motores).
 - [Write-up completo](./writeups/soc-nivel1-wazuh-wireshark.md)
 
+### Análisis de campañas de phishing
+Serie de análisis de correos y mensajes de phishing recibidos de forma directa, documentados bajo metodología de OSINT pasivo (sin interactuar nunca con la infraestructura maliciosa desde un navegador).
+
+- [Phishing OCA — actualización de envío](./writeups/phishing-oca-actualizacion-envio.md)
+
 ### Lab de detección: Wazuh + Windows + Kali
 Ataques simulados desde Kali contra un host Windows con agente Wazuh, documentando qué se detecta y qué no.
 *(en construcción)*
