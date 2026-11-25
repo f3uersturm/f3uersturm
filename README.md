@@ -24,6 +24,7 @@ Home lab del BootCamp Analista SOC Nivel 1 (DOJO, 2024): despliegue de Wazuh con
 Serie de análisis de correos y mensajes de phishing recibidos de forma directa, documentados bajo metodología de OSINT pasivo (sin interactuar nunca con la infraestructura maliciosa desde un navegador).
 
 - [Phishing OCA — actualización de envío](./writeups/phishing-oca-actualizacion-envio.md)
+- [Phishing ARCA (ex-AFIP) — encomienda internacional](./writeups/phishing-arca-encomienda-internacional.md)
 
 ### Lab de detección: Wazuh + Windows + Kali
 Ataques simulados desde Kali contra un host Windows con agente Wazuh, documentando qué se detecta y qué no.
